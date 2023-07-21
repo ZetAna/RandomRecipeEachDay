@@ -1,0 +1,83 @@
+/* CSS Document */
+body,td {
+color: #AEAEAE;
+margin:0;
+padding:0;
+font-family: Tahoma;
+font-size: 9px;
+line-height: 10px;
+letter-spacing: 0px;
+scrollbar-arrow-color: #E5E5E5;
+scrollbar-track-color: #39131E;
+scrollbar-face-color: #39131E;
+scrollbar-highlight-color: #39131E;
+scrollbar-3dlight-color: #39131E;
+scrollbar-darkshadow-color: #39131E;
+scrollbar-shadow-color: #39131E;
+
+}
+
+
+.header
+{
+color: #ffffff;
+background-color: #8A8FA4;
+letter-spacing: 2px;
+font-family: Tahoma;
+cursor:default;
+margin:0;
+margin-bottom:0;
+font-size:12px;
+line-height:13px;
+text-align:center;
+}
+
+
+
+A:link {
+    color: #ffffff; 
+	letter-spacing: 2px;
+	text-align: center;
+ text-decoration: none; 
+}
+A:active {
+    color: #ffffff;
+	letter-spacing: 2px;
+	text-align: center;
+text-decoration: none; 
+}
+A:visited {
+    color: #ffffff; 
+	letter-spacing: 2px;
+	text-align: center; 
+	text-decoration: none; 
+}
+A:hover { 
+color: #ffffff;
+letter-spacing: 2px;
+text-decoration: none; 
+}
+
+A:link.owscounter {
+    color: #A88CB5; 
+	letter-spacing: 2px;
+	text-align: center;
+ text-decoration: none; 
+}
+A:active.owscounter {
+    color: #A88CB5;
+	letter-spacing: 2px;
+	text-align: center;
+text-decoration: none; 
+}
+A:visited.owscounter {
+    color: #A88CB5; 
+	letter-spacing: 2px;
+	text-align: center; 
+	text-decoration: none; 
+}
+A:hover.owscounter { 
+color: #A88CB5;
+letter-spacing: 2px;
+text-decoration: none; 
+}

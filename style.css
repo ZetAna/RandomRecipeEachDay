@@ -1,0 +1,65 @@
+/* CSS Document */
+body, td {
+color: #362D4A;
+margin:0;
+padding:0;
+font-family: Centurys;
+font-size: 14px;
+line-height: 16px;
+letter-spacing: 0px;
+scrollbar-arrow-color: #C09A9F;
+scrollbar-track-color: #ffffff;
+scrollbar-face-color: #81C1CC;
+scrollbar-highlight-color: #ffffff;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #ffffff;
+scrollbar-shadow-color: #ffffff;
+
+}
+
+.head
+{
+color: #ffffff;
+background-color: #9B133B;
+letter-spacing: 2px;
+font-family: Tahoma;
+cursor:default;
+margin:0;
+margin-bottom:0;
+font-size:9px;
+line-height:8px;
+text-align:center;
+}
+/*////NEW////*/
+.center-container {
+    text-align: center;
+}
+
+.center-container img {
+    margin: 10px;
+}
+/*////NEW////*/
+
+A:link {
+    color: #5F7D9E; 
+	letter-spacing: 2px;
+	
+ text-decoration: none; 
+}
+A:active {
+    color: #A88CB5;
+	letter-spacing: 2px;
+	
+text-decoration: none; 
+}
+A:visited {
+    color: #A88CB5; 
+	letter-spacing: 2px;
+	 
+	text-decoration: none; 
+}
+A:hover { 
+color: #B65A78;
+letter-spacing: 2px;
+background-image: 	url('under.gif');
+}

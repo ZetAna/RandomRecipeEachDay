@@ -1,0 +1,105 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Adding htmx extension -->
+    <script src="https://unpkg.com/htmx.org@1.9.3"></script>
+    <!-- Extension to process json -->
+    <script src="https://unpkg.com/htmx.org@1.4.1/dist/ext/client-side-templates.js"></script>
+    <!-- Extension to send post request as json -->
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+    <!-- Templating engine to convert json to html -->
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <title>Random Recipe Each Day</title>
+</head>
+<body >
+
+<div hx-ext="client-side-templates">
+<div style="text-align: center;"><img src="rezepteindex.png"><br>
+<br>
+
+    <!-- Recipe Overview -->
+    <section class="section" id="RecipeNames">
+        <h3 class="title">🧾<br> Recipes overview </h3>
+
+        <!-- This is retrieved dynamically from the backend !-->
+        <div hx-get="http://localhost:8080/anastasia/recipe-api/all-recipes"
+             hx-trigger="load"
+             hx-target="#recipeNameTarget"
+             mustache-template="listOfRecipeNamesTemplate">
+
+        </div>
+    </section>
+    <div id="recipeNameTarget"></div>
+
+    <template id="listOfRecipeNamesTemplate">
+        {{#recipes}}
+        <li>🍽️ {{recipeName}}</li>
+        {{/recipes}}
+    </template>
+
+        <!-- Featured recipe with picture -->
+        <section class="section" id="mainRecipe">
+            <br>  <br> <h3 class="title"> 🍲 🥗 🍰  All Recipes  🍰 🥗 🍲 <br>  <br></h3>
+
+            <!-- This is retrieved dynamically from the backend !-->
+            <div hx-get="http://localhost:8080/anastasia/recipe-api/all-recipes"
+                 hx-trigger="load"
+                 hx-target="#recipeTarget"
+                 mustache-template="listOfRecipesTemplate">
+
+            </div>
+        </section>
+        <div id="recipeTarget"></div>
+
+    <!-- This template is used to render a detailed view of a single bike -->
+    <template id="listOfRecipesTemplate">
+            {{#recipes}}
+
+            <div class="column">
+
+                    <div style="text-align: center;"> <img class="image" src="{{image}}" alt="Recipe {{recipeName}}" width="600" height="400">
+                        <li><strong>Name:</strong> {{recipeName}}</li>
+                        <br>
+                        <li><strong>Type:</strong> {{recipeType}}</li>
+                        <li><strong>Country of origin:</strong> {{countryOfOrigin}}</li>
+                    </div>
+                <br> <br>
+                <div style="text-align: center;">
+                    <strong>Ingredients:</strong>
+                </div>
+                <div style="margin: 0 auto; width: max-content;">
+                    <ul> <!-- Loop for unordered list for ingredients -->
+                        {{#ingredients}}
+                        <li style="text-align: left;">{{.}}</li>
+                        {{/ingredients}}
+                    </ul>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <strong>Instructions:</strong>
+                </div>
+                <div style="margin: 0 auto; width: max-content;">
+                    <ol> <!-- Loop for ordered list for instructions -->
+                        {{#instructions}}
+                        <li style="text-align: left;">{{.}}</li>
+                        {{/instructions}}
+                    </ol>
+                </div>
+                <br><hr><br>
+
+            </div>
+            {{/recipes}}
+    </template>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
